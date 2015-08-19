@@ -1,0 +1,11 @@
+spring:
+  data:
+      mongodb:
+            uri: mongodb://qa-mongo.livfame.com/famePlus_qa
+  rabbitmq.virtual-host: fameplus_qaReplica
+  rabbitmq.username: guest
+  rabbitmq.password: guest
+  rabbitmq.host: qa-rabbitnew.livfame.com
+
+server:
+  port: 8080

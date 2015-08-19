@@ -1,0 +1,11 @@
+spring:
+  data:
+      mongodb:
+            uri: mongodb://mongo.fameplus.com/famePlus_prod
+  rabbitmq.virtual-host: fameplus_prod
+  rabbitmq.username: guest
+  rabbitmq.password: guest
+  rabbitmq.host: rabbitmq.livfame.com
+
+server:
+  port: 8080
