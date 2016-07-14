@@ -1,8 +1,5 @@
 package sample;
 
-/**
- * Created by vikram on 18/8/15.
- */
 public class RequestCommand {
     String message;
 

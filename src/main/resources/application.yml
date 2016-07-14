@@ -1,11 +1,14 @@
 spring:
-  data:
-      mongodb:
-            uri: mongodb://localhost/fameLive_dev
-  rabbitmq.virtual-host: fameplus_dev
-  rabbitmq.username: guest
-  rabbitmq.password: guest
-  rabbitmq.host: localhost
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/spring_jpa?autoReconnect=true&useUnicode=true&CharSet=UTF-8&characterEncoding=UTF-8
+    username: root
+    password: igdefault
+    driverClassName: com.mysql.jdbc.Driver
+
+  jpa:
+    hibernate.ddl-auto: update
+    show-sql: true
 
 server:
-  port: 8090
+  port: 8050

@@ -7,7 +7,7 @@ buildscript {
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-        classpath("io.spring.gradle:dependency-management-plugin:0.5.1.RELEASE")
+        classpath("io.spring.gradle:dependency-management-plugin:0.5.3.RELEASE")
     }
 }
 
@@ -45,21 +45,12 @@ configurations {
 }
 
 dependencies {
-
+    compile('mysql:mysql-connector-java:5.1.6')
     compile("org.springframework.boot:spring-boot-starter")
+    compile('org.springframework.boot:spring-boot-starter-data-jpa')
     compile("org.springframework.boot:spring-boot-starter-integration")
-    compile("org.springframework.boot:spring-boot-starter-data-mongodb")
-    compile("org.springframework.boot:spring-boot-starter-groovy-templates")
     compile("org.springframework.boot:spring-boot-starter-web")
     compile("org.codehaus.groovy:groovy")
-
-    compile("com.mangofactory:swagger-springmvc:1.0.2"){
-        exclude module: "slf4j-log4j12"
-    }
-
-    compile("org.springframework.boot:spring-boot-starter-amqp")
-
-    compile("com.hazelcast:hazelcast-client:3.5.1")
 
 //    providedRuntime("org.eclipse.jetty:jetty-server:9.3.2.v20150730")
 

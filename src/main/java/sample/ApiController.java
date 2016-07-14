@@ -8,9 +8,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by vikram on 18/8/15.
- */
 @RestController
 public class ApiController {
 
