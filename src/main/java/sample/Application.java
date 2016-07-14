@@ -6,7 +6,7 @@ import org.springframework.boot.orm.jpa.EntityScan;
 import org.springframework.context.ConfigurableApplicationContext;
 
 @SpringBootApplication
-@EntityScan("sample.domain")
+@EntityScan(basePackages = "sample.domain")
 public class Application {
 
     public static void main(String[] args) throws InterruptedException {
