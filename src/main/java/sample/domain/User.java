@@ -3,14 +3,15 @@ package sample.domain;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "user")
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column
+    @Column(nullable = true, unique = true)
     private String email;
-    @Column
+    @Column(name = "full_name", nullable = false, length = 25)
     private String name;
 
     public String getEmail() {
