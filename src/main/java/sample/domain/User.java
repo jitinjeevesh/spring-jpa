@@ -3,6 +3,9 @@ package sample.domain;
 import javax.persistence.*;
 
 @Entity
+@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name="DISC", discriminatorType=DiscriminatorType.STRING)
+@DiscriminatorValue(value="USER")
 @Table(name = "user")
 public class User {
 
