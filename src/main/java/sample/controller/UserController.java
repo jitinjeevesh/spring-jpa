@@ -1,6 +1,7 @@
 package sample.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import sample.dao.UserDao;
@@ -38,5 +39,10 @@ public class UserController {
     @RequestMapping("list")
     public List<User> list() {
         return userDao.list();
+    }
+
+    @RequestMapping("findByName/{name}")
+    public User findByName(@PathVariable String name) {
+        return userRepository.findByEmail(name);
     }
 }
