@@ -45,4 +45,9 @@ public class UserController {
     public User findByName(@PathVariable String name) {
         return userRepository.findByEmail(name);
     }
+
+    @RequestMapping("findByNameQuery/{name}")
+    public User findByNameQuery(@PathVariable String name) {
+        return userRepository.findByUserName(name);
+    }
 }
