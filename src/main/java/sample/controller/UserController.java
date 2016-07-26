@@ -50,4 +50,14 @@ public class UserController {
     public User findByNameQuery(@PathVariable String name) {
         return userRepository.findByUserName(name);
     }
+
+    @RequestMapping("findByNameNativeQuery/{name}")
+    public User findByNameNativeQuery(@PathVariable String name) {
+        return userRepository.findByUserNameNative(name);
+    }
+
+    @RequestMapping("findByNameNamed/{name}")
+    public List<User> findByNameNamed(@PathVariable String name) {
+        return userRepository.findByNameNamed(name);
+    }
 }

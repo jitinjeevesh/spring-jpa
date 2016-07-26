@@ -6,6 +6,7 @@ import javax.persistence.*;
 @Inheritance(strategy=InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name="DISC", discriminatorType=DiscriminatorType.STRING)
 @DiscriminatorValue(value="USER")
+@NamedQuery(name = "User.findByNameNamed", query = "SELECT u FROM User u WHERE LOWER(u.name) = LOWER(?1)")
 @Table(name = "user")
 public class User {
 
