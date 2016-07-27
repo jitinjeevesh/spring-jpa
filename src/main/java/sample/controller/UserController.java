@@ -60,4 +60,9 @@ public class UserController {
     public List<User> findByNameNamed(@PathVariable String name) {
         return userRepository.findByNameNamed(name);
     }
+
+    @RequestMapping("custom")
+    public User customRepository() {
+        return userRepository.customMethod();
+    }
 }

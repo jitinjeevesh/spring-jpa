@@ -6,7 +6,7 @@ import sample.domain.User;
 
 import java.util.List;
 
-public interface UserRepository extends JpaRepository<User, Long> {
+public interface UserRepository extends JpaRepository<User, Long>, UserCustomRepository {
 
     User findByEmail(String email);
 
