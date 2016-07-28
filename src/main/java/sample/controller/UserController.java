@@ -65,4 +65,9 @@ public class UserController {
     public User customRepository() {
         return userRepository.customMethod();
     }
+
+    @RequestMapping("shared")
+    public User sharedRepository() {
+        return userRepository.sharedMethod(1l);
+    }
 }
