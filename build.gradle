@@ -47,6 +47,7 @@ configurations {
 dependencies {
     compile('mysql:mysql-connector-java:5.1.6')
     compile("org.springframework.boot:spring-boot-starter")
+    compile("org.springframework.boot:spring-boot-starter-data-rest")
     compile('org.springframework.boot:spring-boot-starter-data-jpa')
     compile("org.springframework.boot:spring-boot-starter-integration")
     compile("org.springframework.boot:spring-boot-starter-web")

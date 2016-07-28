@@ -1,13 +1,16 @@
 package sample.repository;
 
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import sample.domain.User;
 
 import java.util.List;
 
+@RepositoryRestResource(collectionResourceRel = "user", path = "user")
 public interface UserRepository extends MyRepository<User, Long>, UserCustomRepository {
 
-    User findByEmail(String email);
+    User findByEmail(@Param("email") String email);
 
     User findByName(String name);
 
