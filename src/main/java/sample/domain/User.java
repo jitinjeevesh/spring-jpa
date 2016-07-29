@@ -1,6 +1,7 @@
 package sample.domain;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -18,8 +19,9 @@ public class User {
     private String email;
     @Column(name = "full_name", nullable = false, length = 25)
     private String name;
-    @OneToMany(mappedBy = "user")
-    private Set<Account> accounts;
+    @ManyToMany()
+    @JoinTable(name = "user_accounts", joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "account_id", referencedColumnName = "id"))
+    private List<Account> accounts;
 
     public Long getId() {
         return id;
@@ -45,11 +47,11 @@ public class User {
         this.name = name;
     }
 
-    public Set<Account> getAccounts() {
+    public List<Account> getAccounts() {
         return accounts;
     }
 
-    public void setAccounts(Set<Account> accounts) {
+    public void setAccounts(List<Account> accounts) {
         this.accounts = accounts;
     }
 }

@@ -10,6 +10,9 @@ import sample.domain.Account;
 import sample.domain.User;
 import sample.repository.AccountRepository;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Component
 public class BootStrapUtil implements InitializingBean {
     @Autowired
@@ -43,11 +46,15 @@ public class BootStrapUtil implements InitializingBean {
 
 
         Account account = new Account();
-        account.setUser(user);
         accountRepository.save(account);
         Account account1 = new Account();
-        account1.setUser(user);
         accountRepository.save(account1);
+
+        List<Account> accounts=new ArrayList<Account>();
+        accounts.add(account);
+        accounts.add(account1);
+        user.setAccounts(accounts);
+        userDao.save(user);
 
     }
 }

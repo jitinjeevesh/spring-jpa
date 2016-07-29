@@ -1,6 +1,7 @@
 package sample.domain;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Account {
@@ -8,8 +9,8 @@ public class Account {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    private User user;
+    @ManyToMany()
+    private List<User> users;
 
     public Long getId() {
         return id;
@@ -19,11 +20,11 @@ public class Account {
         this.id = id;
     }
 
-    public User getUser() {
-        return user;
+    public List<User> getUsers() {
+        return users;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUsers(List<User> users) {
+        this.users = users;
     }
 }
