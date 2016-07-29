@@ -6,12 +6,16 @@ import org.springframework.stereotype.Component;
 import sample.dao.UserDao;
 import sample.domain.AdminUser;
 import sample.domain.NormalUser;
+import sample.domain.Sale;
 import sample.domain.User;
+import sample.repository.SaleRepository;
 
 @Component
 public class BootStrapUtil implements InitializingBean {
     @Autowired
     private UserDao userDao;
+    @Autowired
+    private SaleRepository saleRepository;
 
     @Override
     public void afterPropertiesSet() throws Exception {
@@ -36,5 +40,14 @@ public class BootStrapUtil implements InitializingBean {
         normalUser.setName("three");
         normalUser.setMobile(1234566l);
         userDao.save(normalUser);
+
+
+        Sale sale = new Sale();
+        sale.setUser(user);
+        saleRepository.save(sale);
+        Sale sale1 = new Sale();
+        sale1.setUser(user);
+        saleRepository.save(sale1);
+
     }
 }
