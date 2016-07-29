@@ -20,6 +20,11 @@ public class BootStrapUtil implements InitializingBean {
         user.setName("one");
         userDao.save(user);
 
+        User user2 = new User();
+        user2.setEmail("one@gmail.com");
+        user2.setName("one");
+        userDao.save(user2);
+
         AdminUser admin = new AdminUser();
         admin.setEmail("two");
         admin.setName("two");

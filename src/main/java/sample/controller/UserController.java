@@ -1,8 +1,11 @@
 package sample.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import sample.dao.UserDao;
 import sample.domain.User;
@@ -69,5 +72,11 @@ public class UserController {
     @RequestMapping("shared")
     public User sharedRepository() {
         return userRepository.sharedMethod(1l);
+    }
+
+    @RequestMapping("pageable")
+    public List<User> pageable(@RequestParam(required = false) int page, @RequestParam(required = false) int size) {
+        Pageable pageable = new PageRequest(page, size);
+        return userRepository.findAllByName("one", pageable);
     }
 }

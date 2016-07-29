@@ -1,5 +1,6 @@
 package sample.repository;
 
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
@@ -15,6 +16,8 @@ public interface UserRepository extends MyRepository<User, Long>, UserCustomRepo
     User findByName(String name);
 
     List<User> findAllByName(String name);
+
+    List<User> findAllByName(String name, Pageable pageable);
 
     @Query("select u from User u where u.name=?1")
     User findByUserName(String name);
