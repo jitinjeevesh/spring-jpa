@@ -3,7 +3,7 @@ package sample.domain;
 import javax.persistence.*;
 
 @Entity
-public class Sale {
+public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
